@@ -1,5 +1,11 @@
-Select count(userid) from (Select count(b.logindate),b.userid
-from i_users a,i_users_login_logs b
-Where a.userid=b.userid
-And b.isactive=1
-Having count(logindate)>3)
+
+#the code was written PLSQL
+#is active was exclude in data that information didn't give me.But i imagine this this users doesn't has grant for this area or 
+#who previosly active.
+
+select count(*) from (select a.userid,count(*) as bb from i_users a
+inner join i_user_login_logs b
+on a.userid=b.userid
+where isActive=1
+group by a.userid
+having count(*)>3)
