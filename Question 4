@@ -1,8 +1,3 @@
-
-#the code was written PLSQL
-#is active was exclude in data that information didn't give me.But i imagine this this users doesn't has grant for this area or 
-#who previosly active.
-
 select count(*) from (select a.userid,count(*) as bb from i_users a
 inner join i_user_login_logs b
 on a.userid=b.userid
