@@ -1,10 +1,1 @@
-select  d.username,d.emailaddress from (
-select c.*,rownum from (
-select count(*),a.username,a.emailaddress from i_users a, 
-i_user_login_logs b 
-where a.userid=b.userid
-and username<>'Administrator'
-group by a.username,a.emailaddress
-order by 1 desc 
-) c ) d
-where rownum=1
+
